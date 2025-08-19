@@ -1,4 +1,4 @@
-from flask import Flask ,jsonify
+from flask import Flask ,jsonify,render_template
 from jwttoken import jwtretttoap
 import os
 
@@ -27,5 +27,6 @@ def jwtjson(pas,userid):
         return data
 if __name__ == "__main__":
     app.run(debug=True)
+
 
 
