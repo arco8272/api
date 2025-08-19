@@ -2,7 +2,20 @@ from flask import Flask ,jsonify
 from jwttoken import jwtretttoap
 
 app = Flask(__name__)
-# str:n
+
+@app.route('/')
+def serve_html():
+    # Path to your HTML file
+    html_file_path = 'improx.html'  # Replace with your actual file path
+    
+    # Check if file exists
+    if not os.path.exists(html_file_path):
+        return f"HTML file not found at: {html_file_path}"
+    
+    # Serve the HTML file
+    return send_file(html_file_path)
+    
+    
 @app.route("/jwt/password=<string:pas>&uid=<int:userid>")
 def jwtjson(pas,userid):
     jwt =jwtretttoap(passw=pas,uid=userid)
@@ -20,4 +33,3 @@ def jwtjson(pas,userid):
         return data
 if __name__ == "__main__":
     app.run(debug=True)
-
