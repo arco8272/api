@@ -1,5 +1,6 @@
 from flask import Flask ,jsonify
 from jwttoken import jwtretttoap
+import os
 
 app = Flask(__name__)
 
@@ -33,3 +34,4 @@ def jwtjson(pas,userid):
         return data
 if __name__ == "__main__":
     app.run(debug=True)
+
