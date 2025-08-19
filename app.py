@@ -2,7 +2,7 @@ from flask import Flask ,jsonify,render_template
 from jwttoken import jwtretttoap
 import os
 
-app = Flask(__name__)
+app = Flask(__name__,template_folder='\')
 
 @app.route('/')
 def serve_html():
@@ -27,6 +27,7 @@ def jwtjson(pas,userid):
         return data
 if __name__ == "__main__":
     app.run(debug=True)
+
 
 
 
