@@ -7,7 +7,7 @@ app = Flask(__name__)
 @app.route('/')
 def serve_html():
     # Render the ind.html file
-    return render_template('improx.html')
+    return render_template('index.html')
     
     
 @app.route("/jwt/password=<string:pas>&uid=<int:userid>")
@@ -27,6 +27,7 @@ def jwtjson(pas,userid):
         return data
 if __name__ == "__main__":
     app.run(debug=True)
+
 
 
 
